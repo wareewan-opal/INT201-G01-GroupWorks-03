@@ -75,10 +75,8 @@ function play(player, question, answer) { //รับค่าผู้เล่
 }
 
 function total(p) {//รวมคะแนนของ Player โดยแสดงชื่อ Player และคะแนนรวม
-    console.log(p.getName());
-    console.log(`Total Score : ${p.getScore()} Point`);
+    console.log(`Player : ${p.getName()} -> Total Score = ${p.getScore()} Point`);
 }
-
 //Player 
 let p1 = new player('Tle'); 
 let p2 = new player('Opal');
@@ -105,3 +103,23 @@ play(p1, q1, 3); //false
 play(p1, q2, 2); //false
 play(p1, q3, 2); //True
 total(p1); // Total score
+console.log('------------------------')
+play(p2, q2, 3);
+play(p2, q5, 1);
+total(p2);
+console.log('------------------------')
+play(p3, q1, 1);
+play(p3, q4, 1);
+total(p3);
+console.log('------------------------')
+play(p4, q3, 3);
+play(p4, q2, 1);
+total(p4);
+console.log('------------------------')
+play(p5, q2, 3);
+play(p5, q4, 1);
+total(p5);
+console.log('------------------------')
+play(p6, q1, 3);
+play(p6, q5, 1);
+total(p6);
