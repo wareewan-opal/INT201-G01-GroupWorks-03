@@ -63,11 +63,19 @@ function check(question, ans) { // เช็คคำตอบของ Player �
         return false;
 }
 
+<<<<<<< HEAD
 function play(player, question, answer) { //รับค่าผู้เล่น คำถามที่ต้องการตอบ และคำตอบ
     console.log(`Player : ${player.getName()}`);//แสดงชื่อ Player
     console.log(`Question : ${question.getQuestion()}`);//แสดง โจทย์คำถาม
     console.log(`Answer ${answer} : ${question.getAns(answer)}`);//แสดง คำตอบ
     if (check(question, answer) == true) {//เช็คเงื่อนไขถ้า คำถามและคำตอบถูกต้องโดยผ่าน function check ถ้าเป็นจริงให้เพิ่ม scroe +1
+=======
+function play(player,question,answer){
+    console.log(`Player : ${player.getName()}`);
+    console.log(`Question : ${question.getQuestion()}`);
+    console.log(`Answer ${answer} : ${question.getAns(answer)}`);
+    if(check(question,answer) == true){
+>>>>>>> 9aafe61960d82309854c09dff7ae0b1a12f31bf9
         player.score += 1;
         console.log('Answer is Correct! \n'); 
     } else
@@ -99,9 +107,23 @@ q4.setCorrect(1);
 let q5 = new question(5, 'What is 10 x 2', '10', '20', '30', '999');
 q5.setCorrect(2);
 
+<<<<<<< HEAD
 
 //Playing
 play(p1, q1, 3); //false
 play(p1, q2, 2); //false
 play(p1, q3, 2); //True
 total(p1); // Total score
+=======
+//Playing
+play(p1,q1,3); //false
+play(p1,q2,3); //false
+play(p1,q3,2); //True
+total(p1);
+
+
+
+
+
+
+>>>>>>> 9aafe61960d82309854c09dff7ae0b1a12f31bf9
