@@ -39,19 +39,19 @@ Choice 4 : ${this._ans[3]}`
 
 class player {
     score = 0;
-    constructor(name) {
+    constructor(name) { //รับค่าชื่อของผู้เล่นใหม่
         this._name = name;
     }
     getName() {
         return this._name;
     }
-    setName(newName) {
+    setName(newName) { //rename ใหม่
         this._name = newName;
     }
     getScore() {
         return this.score;
     }
-    toString() {
+    toString() { // แสดงชื่อ player และ คะแนนของผู้เล่น
         return `Player : ${this._name} | Score : ${this.score} point`;
     }
 }
@@ -63,18 +63,18 @@ function check(question, ans) { // เช็คคำตอบของ Player �
         return false;
 }
 
-function play(player, question, answer) {
-    console.log(`Player : ${player.getName()}`);
-    console.log(`Question : ${question.getQuestion()}`);
-    console.log(`Answer ${answer} : ${question.getAns(answer)}`);
-    if (check(question, answer) == true) {
+function play(player, question, answer) { //รับค่าผู้เล่น คำถามที่ต้องการตอบ และคำตอบ
+    console.log(`Player : ${player.getName()}`); //แสดงชื่อ Player
+    console.log(`Question : ${question.getQuestion()}`); //แสดง โจทย์คำถาม
+    console.log(`Answer ${answer} : ${question.getAns(answer)}`); //แสดง คำตอบ
+    if (check(question, answer) == true) { //เช็คเงื่อนไขถ้า คำถามและคำตอบถูกต้องโดยผ่าน function check ถ้าเป็นจริงให้เพิ่ม scroe +1
         player.score += 1;
         console.log('Answer is Correct! \n');
     } else
         console.log('Answer is Incorrect! \n');
 }
 
-function total(p) {
+function total(p) { //รวมคะแนนของ Player โดยแสดงชื่อ Player และคะแนนรวม
     console.log('Player :' + ' ' + p.getName() + ' ->' + ` Total Score = ${p.getScore()} Point`);
 }
 //Player 
