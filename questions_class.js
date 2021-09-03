@@ -63,17 +63,12 @@ function check(question, ans) {
         return false;
 }
 
-function plusScore(player) {
-    player.score += 1;
-    return true;
-}
-
 function play(player, question, answer) {
     console.log(`Player : ${player.getName()}`);
     console.log(`Question : ${question.getQuestion()}`);
     console.log(`Answer ${answer} : ${question.getAns(answer)}`);
     if (check(question, answer) == true) {
-        plusScore(player);
+        player.score += 1;
         console.log('Answer is Correct! \n');
     } else
         console.log('Answer is Incorrect! \n');
