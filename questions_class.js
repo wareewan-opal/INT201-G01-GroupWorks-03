@@ -75,8 +75,7 @@ function play(player, question, answer) {
 }
 
 function total(p) {
-    console.log(p.getName());
-    console.log(`Total Score : ${p.getScore()} Point`);
+    console.log('Player :' + ' ' + p.getName() + ' ->' + ` Total Score = ${p.getScore()} Point`);
 }
 
 //Player
@@ -99,10 +98,28 @@ q4.setCorrect(1);
 let q5 = new question(5, 'What is 10 x 2', '10', '20', '30', '999');
 q5.setCorrect(2);
 
-let AllQuestion = []
-
 //Playing
-play(p1, q1, 3); //false
-play(p1, q2, 2); //false
-play(p1, q3, 2); //True
+console.log('------------------------')
+play(p1, q1, 3);
+play(p1, q3, 2);
 total(p1);
+console.log('------------------------')
+play(p2, q2, 3);
+play(p2, q5, 1);
+total(p2);
+console.log('------------------------')
+play(p3, q1, 3);
+play(p3, q4, 1);
+total(p3);
+console.log('------------------------')
+play(p4, q3, 3);
+play(p4, q2, 1);
+total(p4);
+console.log('------------------------')
+play(p5, q2, 3);
+play(p5, q4, 1);
+total(p5);
+console.log('------------------------')
+play(p6, q1, 3);
+play(p6, q5, 1);
+total(p6);
