@@ -22,7 +22,7 @@ class question {
         return this._correct;
     }
     setAns(i, str) { // set ตัวเลือกเมื่อต้องการแก้ไขตัวเลือกของโจทย์คำถามและจะแก้ไขเป็นอะไร
-        this._ans[--i] = 'str';
+        this._ans[--i] = str;
         return true;
     }
     getAns(i) { // คำตอบที่ Player ตอบ
