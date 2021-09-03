@@ -30,7 +30,7 @@ Choice 4 : ${this._ans[3]}
 \n`
     }
 }
-
+//1
 class player{
     score = 0;
     constructor(name){
