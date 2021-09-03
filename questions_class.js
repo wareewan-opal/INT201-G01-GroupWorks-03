@@ -1,34 +1,34 @@
-class question {
-    constructor(id, question, choice1, choice2, choice3, choice4) {
+class question {  
+    constructor(id, question, choice1, choice2, choice3, choice4) { // constuctor รับค่า parameter ของเลขข้อ คำถาม ตัวเลือก1,2,3,4 ตามลำดับ
         this._id = id;
         this._question = question;
         this._choice1 = choice1;
         this._choice2 = choice2;
         this._choice3 = choice3;
         this._choice4 = choice4;
-        this._ans = [this._choice1, this._choice2, this._choice3, this._choice4];
+        this._ans = [this._choice1, this._choice2, this._choice3, this._choice4]; // ans เป็น Array ที่ไว้ใช้เรียก index ของคำถาม
     }
-    getQuestion() {
+    getQuestion() { // return โจทย์คำถาม
         return this._question;
     }
-    getId() {
+    getId() { // return เลขข้อ
         return this._id;
     }
-    setCorrect(i) {
+    setCorrect(i) { // คำตอบว่าข้อที่ถูกต้องคือข้อไหน
         this._correct = this._ans[--i];
         return true;
     }
-    getCorrect() {
+    getCorrect() {  // return คำตอบที่ถูกต้อง
         return this._correct;
     }
-    setAns(i, str) {
+    setAns(i, str) {  // set ตัวเลือกเมื่อต้องการแก้ไขตัวเลือกของโจทย์คำถามและจะแก้ไขเป็นอะไร
         this._ans[--i] = 'str';
         return true;
     }
-    getAns(i) {
+    getAns(i) { // คำตอบที่ Player ตอบ
         return this._ans[--i];
     }
-    toString() {
+    toString() { // แสดงคำถามและตัวเลือกตามลำดับผ่าน toString
         return `Questions ${this._question}
 Choice 1 : ${this._ans[0]} 
 Choice 2 : ${this._ans[1]} 
@@ -39,48 +39,48 @@ Choice 4 : ${this._ans[3]}`
 
 class player {
     score = 0;
-    constructor(name) {
+    constructor(name) { //รับค่าชื่อของผู้เล่นใหม่
         this._name = name;
     }
     getName() {
         return this._name;
     }
-    setName(newName) {
+    setName(newName) { //rename ใหม่
         this._name = newName;
     }
     getScore() {
         return this.score;
     }
-    toString() {
+    toString() { // แสดงชื่อ player และ คะแนนของผู้เล่น
         return `Player : ${this._name} | Score : ${this.score} point`;
     }
 }
 
-function check(question, ans) {
+function check(question, ans) { // เช็คคำตอบของ Player ว่าตรงกับ getCorrect() ที่ set ไว้ไหม
     if (question.getCorrect() == question.getAns(ans)) {
         return true;
     } else
         return false;
 }
 
-function play(player, question, answer) {
-    console.log(`Player : ${player.getName()}`);
-    console.log(`Question : ${question.getQuestion()}`);
-    console.log(`Answer ${answer} : ${question.getAns(answer)}`);
-    if (check(question, answer) == true) {
+function play(player, question, answer) { //รับค่าผู้เล่น คำถามที่ต้องการตอบ และคำตอบ
+    console.log(`Player : ${player.getName()}`);//แสดงชื่อ Player
+    console.log(`Question : ${question.getQuestion()}`);//แสดง โจทย์คำถาม
+    console.log(`Answer ${answer} : ${question.getAns(answer)}`);//แสดง คำตอบ
+    if (check(question, answer) == true) {//เช็คเงื่อนไขถ้า คำถามและคำตอบถูกต้องโดยผ่าน function check ถ้าเป็นจริงให้เพิ่ม scroe +1
         player.score += 1;
-        console.log('Answer is Correct! \n');
+        console.log('Answer is Correct! \n'); 
     } else
         console.log('Answer is Incorrect! \n');
 }
 
-function total(p) {
+function total(p) {//รวมคะแนนของ Player โดยแสดงชื่อ Player และคะแนนรวม
     console.log(p.getName());
     console.log(`Total Score : ${p.getScore()} Point`);
 }
 
-//Player
-let p1 = new player('Tle');
+//Player 
+let p1 = new player('Tle'); 
 let p2 = new player('Opal');
 let p3 = new player('Game');
 let p4 = new player('Bew');
@@ -99,10 +99,9 @@ q4.setCorrect(1);
 let q5 = new question(5, 'What is 10 x 2', '10', '20', '30', '999');
 q5.setCorrect(2);
 
-let AllQuestion = []
 
 //Playing
 play(p1, q1, 3); //false
 play(p1, q2, 2); //false
 play(p1, q3, 2); //True
-total(p1);
+total(p1); // Total score
