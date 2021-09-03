@@ -63,19 +63,12 @@ function check(question , ans){
         return false;
 }
 
-function plusScore(player){
-    player.score += 1;
-    return true;
-}
-
 function play(player,question,answer){
     console.log(`Player : ${player.getName()}`);
     console.log(`Question : ${question.getQuestion()}`);
     console.log(`Answer ${answer} : ${question.getAns(answer)}`);
-    player.arrayOfQuestion += question.getId();
-    player.arrayOfAns += answer;
     if(check(question,answer) == true){
-        plusScore(player);
+        player.score += 1;
         console.log('Answer is Correct! \n');
     }else
         console.log('Answer is Incorrect! \n');
@@ -106,11 +99,9 @@ q4.setCorrect(1);
 let q5 = new question(5,'What is 10 x 2','10','20','30','999');
 q5.setCorrect(2);
 
-let AllQuestion = []
-
 //Playing
 play(p1,q1,3); //false
-play(p1,q2,2); //false
+play(p1,q2,3); //false
 play(p1,q3,2); //True
 total(p1);
 
