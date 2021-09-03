@@ -39,16 +39,16 @@ Choice 4 : ${this._ans[3]}`
 
 class player {
     score = 0;
-    constructor(name) { //รับค่าชื่อของผู้เล่นใหม่
+    constructor(name) { // รับค่าชื่อของผู้เล่นใหม่
         this._name = name;
     }
-    getName() {
+    getName() {// return ชื่อของ player
         return this._name;
     }
     setName(newName) { //rename ใหม่
         this._name = newName;
     }
-    getScore() {
+    getScore() {// return คะแนนของ Player
         return this.score;
     }
     toString() { // แสดงชื่อ player และ คะแนนของผู้เล่น
